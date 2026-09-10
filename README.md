@@ -30,7 +30,7 @@ The following modules have been tested on a K1 and seem to be working ok for me 
 - Fluidd  
 - Klipper Gcode Shell Command  
 - KAMP (Modification has been made to `START_PRINT` gcode as found in the new CFS kit firmware.)
-  (Purge routine split from `START_PRINT` macro to prevent the printer trying to purge prior to loading filament. Purge can be called by adding `ADAPT_PURGE_MOD` to the end of Slicer start gcode.)  
+  (Purge routine split from `START_PRINT` macro to prevent the printer trying to purge prior to loading filament. `START_PRINT` now runs a heat soak and re-homes Z at operating temperature before meshing, then performs the purge itself at the end — no need to call `ADAPT_PURGE_MOD` from slicer gcode.)  
 - Save Z Offset Macros  
 
 ---
@@ -71,7 +71,7 @@ Git will now be installed and the Helper Script can be Git cloned to your printe
 
 6. Clone the script:
 ```
-git clone --depth 1 https://github.com/Nik-oli/Creality-Helper-Script-K1-CFS.git /usr/data/helper-script
+git clone --depth 1 https://github.com/qdzlug/Creality-Helper-Script-K1-CFS.git /usr/data/helper-script
 ```
 7. Run the script:
 ```
