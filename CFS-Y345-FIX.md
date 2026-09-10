@@ -51,6 +51,12 @@ Nothing on the printer needs to change.
   on the printer. Full-file scan confirmed those 4 lines were the only
   out-of-range moves. Resume via the screen's continue-print; the PLA-CF
   tool change had already completed before the abort.
+- Resume at position 229397 was NOT possible after klippy restarted:
+  the running klippy had cached the original (unfixed) file header and
+  kept issuing Y345; a restart clears that cache but also clears the
+  in-memory resume position (EEPROM continue path requires power-loss
+  state that was consumed by the cancel cycle). Print restarted from
+  the beginning ~06:08 and runs the fixed file cleanly.
 
 - Verified on printer 2026-09-11: cut sensor events fire normally
   (`CUT SENSOR STATE: 1 -> 0`); both failed prints died at the same gcode
