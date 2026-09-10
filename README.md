@@ -30,7 +30,7 @@ The following modules have been tested on a K1 and seem to be working ok for me 
 - Fluidd  
 - Klipper Gcode Shell Command  
 - KAMP (Modification has been made to `START_PRINT` gcode as found in the new CFS kit firmware.)
-  (Purge routine split from `START_PRINT` macro to prevent the printer trying to purge prior to loading filament. `START_PRINT` now runs a heat soak and re-homes Z at operating temperature before meshing, then performs the purge itself at the end — no need to call `ADAPT_PURGE_MOD` from slicer gcode.)  
+  (Purge routine split from `START_PRINT` macro to prevent the printer trying to purge prior to the CFS loading filament. `START_PRINT` now runs a heat soak and re-homes Z at operating temperature before meshing, then reheats the nozzle — call `ADAPT_PURGE_MOD` at the end of Slicer start gcode once the CFS has loaded filament.)  
 - Save Z Offset Macros  
 
 ---
