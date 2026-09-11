@@ -1,5 +1,6 @@
 START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]
 T[initial_no_support_extruder]
+ADAPT_PURGE_MOD
 M204 S2000
 M104 S[nozzle_temperature_initial_layer]
 G1 Z3 F600

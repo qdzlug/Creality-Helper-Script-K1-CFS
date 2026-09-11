@@ -51,6 +51,13 @@ with the CFS kit (K1, K1 Max, K1C, K1 SE).
 3. Re-slice and verify: in the slicer preview (travel moves visible),
    no toolchange travel should exceed Y295.
 
+> Requires the KAMP module (with the opt-in-purge `ADAPT_PURGE_MOD`
+> variant) installed on the printer — `machine_start_gcode` calls
+> `ADAPT_PURGE_MOD` right after the initial `T` command, once the CFS has
+> loaded and flushed filament. Without that helper-script module the
+> purge call is an unknown command; with stock START_PRINT (purge inline)
+> the `ADAPT_PURGE_MOD` line should be removed.
+
 ## Verification
 
 On a sliced file, check the header:
